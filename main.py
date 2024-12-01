@@ -53,6 +53,13 @@ def update():
 def draw():
     pyxel.cls(0)
 
+    
+    for i in range(0,16):
+        pyxel.blt(i*16,0,0,0,16,16,16,0)
+        pyxel.blt(0,16*i+1,0,16,16,5,16,0)
+        pyxel.blt(256-5,16*i+1,0,27,16,5,16,0)
+
+    
 
     player = pyxel.blt(coordinates[0], coordinates[1], 0, curent_anim[0], curent_anim[1], curent_anim[2], curent_anim[3], curent_anim[4]) # Ajout du personnage de TEST
 
