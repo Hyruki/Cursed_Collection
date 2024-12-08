@@ -51,14 +51,8 @@ def hud():
     global récolte
     if récolte>0:
         pyxel.blt(4,238,0,0,72,16,16,1)
-        #for i in range(pyxel.frame_count<x+25):
-         #   pyxel.blt(10,241,0,1,97,4,4,1)
-        #for i in range(pyxel.frame_count>x+25 and pyxel.frame_count<x+50):
-         #   pyxel.blt(11,242,0,2,90,4,4,1)         #cercle blanc quand on récup un objet (moche)
-        for i in range(pyxel.frame_count%13==1):
-            pyxel.blt(9,240,0,8,88,6,6,1)
-        for i in range(pyxel.frame_count%12==0):
-            pyxel.blt(9,240,0,8,96,6,6,1)
+        coef_particule=pyxel.frame_count//15%3
+        pyxel.bltm(9,240,0,6*coef_particule,16,6,6,1)
     else :
         pyxel.blt(4,238,0,16,72,16,16,1)
     ecrire_score=str(butin)
