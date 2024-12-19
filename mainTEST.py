@@ -1,6 +1,6 @@
 import pyxel
 
-pyxel.init(256, 256, "The Darkness Lord")
+pyxel.init(156, 156, "The Darkness Lord")
 
 pyxel.load('sprites.pyxres')
 
@@ -18,10 +18,10 @@ WALL = [(0,2),(1,2),(0,3),(1,3)]
 def move_player():
     global player_x, player_y, jumping, velocity
 
-    if pyxel.btn(pyxel.KEY_RIGHT) and pyxel.tilemap(0).pget((player_x+13)//8, player_y//8) not in WALL:
+    if pyxel.btn(pyxel.KEY_RIGHT) and pyxel.tilemap(0).pget((player_x+13)//8, player_y//8) not in WALL and pyxel.tilemap(0).pget((player_x+13)//8, (player_y+18)//8) not in WALL:
         player_x += 1
 
-    if pyxel.btn(pyxel.KEY_LEFT) and pyxel.tilemap(0).pget((player_x-1)//8, player_y//8) not in WALL:
+    if pyxel.btn(pyxel.KEY_LEFT) and pyxel.tilemap(0).pget((player_x-1)//8, player_y//8) not in WALL and pyxel.tilemap(0).pget((player_x-1)//8, (player_y+18)//8) not in WALL:
         player_x -= 1
 
     if pyxel.btn(pyxel.KEY_SPACE) and jumping == False and on_floor:
@@ -49,7 +49,7 @@ def update():
 
     print(velocity)
 
-    if pyxel.tilemap(0).pget((player_x)//8, (player_y+19)//8) not in WALL:
+    if pyxel.tilemap(0).pget((player_x)//8, (player_y+20)//8) not in WALL and pyxel.tilemap(0).pget((player_x+13)//8, (player_y+20)//8) not in WALL:
         velocity += gravity
         on_floor = False
     else:
