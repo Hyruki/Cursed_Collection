@@ -4,25 +4,40 @@ pyxel.init(156, 156, "The Darkness Lord")
 
 pyxel.load('sprites.pyxres')
 
-player_x, player_y = 50, 50
+player_x, player_y = 40, 40
 
-gravity = 1
+gravity = 0.8
 jump_H = 10
-velocity = 5
+velocity = 0
 jumping = False
 
 on_floor = False
 
+tile_size = 8
+
 WALL = [(0,2),(1,2),(0,3),(1,3)]
+
+def verif_col_liste(x, y, l):
+    tile_x = int(x / tile_size)
+    tile_y = int(y / tile_size)
+
+    return pyxel.tilemap(0).pget(tile_x,tile_y) in l
+
 
 def move_player():
     global player_x, player_y, jumping, velocity
 
-    if pyxel.btn(pyxel.KEY_RIGHT) and pyxel.tilemap(0).pget((player_x+13)//8, player_y//8) not in WALL and pyxel.tilemap(0).pget((player_x+13)//8, (player_y+18)//8) not in WALL:
+    if pyxel.btn(pyxel.KEY_RIGHT) and not verif_col_liste(player_x+14, player_y, WALL) and not verif_col_liste(player_x+14, player_y+19, WALL):
         player_x += 1
 
-    if pyxel.btn(pyxel.KEY_LEFT) and pyxel.tilemap(0).pget((player_x-1)//8, player_y//8) not in WALL and pyxel.tilemap(0).pget((player_x-1)//8, (player_y+18)//8) not in WALL:
+    if pyxel.btn(pyxel.KEY_LEFT) and not verif_col_liste(player_x-1, player_y, WALL) and not verif_col_liste(player_x-1, player_y+19, WALL):
         player_x -= 1
+
+    if pyxel.btn(pyxel.KEY_UP) and not verif_col_liste(player_x, player_y-1, WALL) and not verif_col_liste(player_x+13, player_y-1, WALL):
+        player_y -= 1
+    if pyxel.btn(pyxel.KEY_DOWN) and not verif_col_liste(player_x, player_y+20, WALL) and not verif_col_liste(player_x+13, player_y+20, WALL):
+        player_y += 1
+
 
     if pyxel.btn(pyxel.KEY_SPACE) and jumping == False and on_floor:
         jumping = True
@@ -32,10 +47,7 @@ def move_player():
 def jump_sys():
     global jumping, velocity, on_floor
     if jumping:
-        velocity = -10
-
-
-
+        velocity = -5
 
     """if pyxel.btn(pyxel.KEY_UP):
         player_y -= 1
@@ -47,10 +59,9 @@ def update():
   
     move_player()
 
-    print(velocity)
-
-    if pyxel.tilemap(0).pget((player_x)//8, (player_y+20)//8) not in WALL and pyxel.tilemap(0).pget((player_x+13)//8, (player_y+20)//8) not in WALL:
-        velocity += gravity
+    if not verif_col_liste(player_x, player_y+20, WALL) and not verif_col_liste(player_x+13, player_y+20, WALL):
+        if velocity < 0.8:
+            velocity += gravity
         on_floor = False
     else:
         on_floor = True
@@ -61,6 +72,8 @@ def update():
 
 
     player_y += velocity
+
+ 
          
 
 def draw():
