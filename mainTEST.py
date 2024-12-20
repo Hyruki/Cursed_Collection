@@ -7,7 +7,6 @@ pyxel.load('sprites.pyxres')
 player_x, player_y = 40, 40
 
 gravity = 0.8
-jump_H = 10
 velocity = 0
 jumping = False
 
@@ -33,10 +32,10 @@ def move_player():
     if pyxel.btn(pyxel.KEY_LEFT) and not verif_col_liste(player_x-1, player_y, WALL) and not verif_col_liste(player_x-1, player_y+19, WALL):
         player_x -= 1
 
-    if pyxel.btn(pyxel.KEY_UP) and not verif_col_liste(player_x, player_y-1, WALL) and not verif_col_liste(player_x+13, player_y-1, WALL):
+    """if pyxel.btn(pyxel.KEY_UP) and not verif_col_liste(player_x, player_y-1, WALL) and not verif_col_liste(player_x+13, player_y-1, WALL):
         player_y -= 1
     if pyxel.btn(pyxel.KEY_DOWN) and not verif_col_liste(player_x, player_y+20, WALL) and not verif_col_liste(player_x+13, player_y+20, WALL):
-        player_y += 1
+        player_y += 1"""
 
 
     if pyxel.btn(pyxel.KEY_SPACE) and jumping == False and on_floor:
@@ -59,6 +58,9 @@ def update():
   
     move_player()
 
+    if verif_col_liste(player_x, player_y-1, WALL) or verif_col_liste(player_x+13, player_y-1, WALL):
+        velocity = 0
+
     if not verif_col_liste(player_x, player_y+20, WALL) and not verif_col_liste(player_x+13, player_y+20, WALL):
         if velocity < 0.8:
             velocity += gravity
@@ -68,6 +70,7 @@ def update():
         velocity = 0
 
         jump_sys()
+
 
 
 
