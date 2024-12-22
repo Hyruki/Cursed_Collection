@@ -67,6 +67,8 @@ def update():
   
     move_player()
 
+    pyxel.camera(player_x - 156 // 2, player_y - 156 // 2)
+
     # Détection collision du haut
     if verif_col_liste(player_x, player_y-1, WALL) or verif_col_liste(player_x+13, player_y-1, WALL):
         velocity = 0
