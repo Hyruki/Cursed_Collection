@@ -18,6 +18,13 @@ couleur_butin=10
 valeur_butin=0
 butin=0
 x=0
+temporaire=0
+ultime=attaque_basique=esquive=abilité_simple=False
+cooldown_ultime=420
+cooldown_esquive=270
+cooldown_attaque_basique=25
+cooldown_abilité_simple=140
+pyxel.mouse(True)
 def perso():
     global xperso
     if pyxel.btn(pyxel.KEY_D):
@@ -47,6 +54,54 @@ def récolte_butin():
             récolte=1
         if récolte==0:
             y=x
+def capacité_espace():
+    global esquive,cooldown_esquive,temporaire
+    pyxel.blt(230-15,250,0,0,120,9,3,1)
+    if esquive==False:
+        pyxel.blt(230-15,239,0,3,107,9,9,1)
+        if pyxel.btnr(pyxel.KEY_SPACE):
+            esquive=True
+            temporaire=pyxel.frame_count
+    if esquive ==True:
+        pyxel.blt(230-15,239,0,19,107,9,9,1)
+    if pyxel.frame_count>temporaire+cooldown_esquive:
+        esquive=False
+def capacité_e():
+    global ultime,cooldown_ultime,temporaire
+    pyxel.text(247-10,249,'E',7)
+    if ultime==False:
+        pyxel.blt(234,239,0,3,107,9,9,1)
+        if pyxel.btnr(pyxel.KEY_E):
+            ultime=True
+            temporaire=pyxel.frame_count
+    if ultime ==True:
+        pyxel.blt(234,239,0,19,107,9,9,1)
+    if pyxel.frame_count>temporaire+cooldown_ultime:
+        ultime=False
+def attaque_secondaire():
+    global abilité_simple,cooldown_abilité_simple,temporaire
+    pyxel.blt(198,248,0,9,127,5,8,1)
+    if abilité_simple==False:
+        pyxel.blt(196,239,0,3,107,9,9,1)
+        if pyxel.btnr(pyxel.MOUSE_BUTTON_RIGHT):
+            abilité_simple=True
+            temporaire=pyxel.frame_count
+    if abilité_simple ==True:
+        pyxel.blt(196,239,0,19,107,9,9,1)
+    if pyxel.frame_count>temporaire+cooldown_abilité_simple:
+        abilité_simple=False
+def attaque_principale():
+    global attaque_basique,cooldown_attaque_basique,temporaire
+    pyxel.blt(179,249,0,2,128,5,8,1)
+    if attaque_basique==False:
+        pyxel.blt(177,239,0,3,107,9,9,1)
+        if pyxel.btnr(pyxel.MOUSE_BUTTON_LEFT):
+            attaque_basique=True
+            temporaire=pyxel.frame_count
+    if attaque_basique ==True:
+        pyxel.blt(177,239,0,19,107,9,9,1)
+    if pyxel.frame_count>temporaire+cooldown_attaque_basique:
+        attaque_basique=False
 def hud():
     global récolte
     if récolte>0:
@@ -68,4 +123,9 @@ def draw():
     pyxel.rect(xperso,yperso,lperso,hperso,5)
     pyxel.rect(xbutin,ybutin,lbutin,hbutin,couleur_butin)
     hud()
+    capacité_e()
+    capacité_espace()
+    attaque_secondaire()
+    attaque_principale()
+    
 pyxel.run(update,draw)     
