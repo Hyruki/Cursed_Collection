@@ -1,11 +1,13 @@
 import pyxel
+from hud import *
 
-pyxel.init(156, 156, "The Darkness Lord")
 
-pyxel.load('sprites.pyxres')
+pyxel.init(256, 256, "The Darkness Lord")
+
+pyxel.load('vie256.pyxres')
 
 # Variable de Base
-player_x, player_y = 40, 40
+player_x, player_y = 40, 25
 
 gravity = 0.8
 velocity = 0
@@ -16,7 +18,9 @@ on_floor = False
 tile_size = 8
 
 # Coordoné tiles des murs
-WALL = [(0,2),(1,2),(0,3),(1,3)]
+#WALL = [(0,2),(1,2),(0,3),(1,3)]
+
+WALL = [(0,8)]
 
 # Détection collisions par rapport à une liste
 
@@ -75,7 +79,7 @@ def update():
 
     # Système de gravité
     if not verif_col_liste(player_x, player_y+20, WALL) and not verif_col_liste(player_x+13, player_y+20, WALL):
-        if velocity < 0.8:
+        if velocity < 0.5:
             velocity += gravity
         on_floor = False
     else:
@@ -93,8 +97,15 @@ def update():
 def draw():
     pyxel.cls(0)
     pyxel.bltm(0, 0, 0, 0, 0, 16*50, 16*50, 0)
-    player = pyxel.blt(player_x, player_y, 0, 0, 32, 13, 19, 11)
-
+    player = pyxel.blt(player_x, player_y, 0, 0, 136, 13, 19, 11)
+    afficher_pv_perso()
+    pyxel.rect(xbutin,ybutin,lbutin,hbutin,couleur_butin)
+    hud()
+    capacité_e()
+    capacité_espace()
+    attaque_secondaire()
+    attaque_principale()
+    boss_blanc()
 
 # Execution du jeu en boucle
 pyxel.run(update, draw)

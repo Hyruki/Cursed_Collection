@@ -1,4 +1,5 @@
 import pyxel
+from data import *
 
 # =============================== A LIRE ! ===================================
 # CE SCRIPT A POUR BUT DE RANGER LES FONCTIONS ET DES VARIABLES IMPORTANTES 
