@@ -1,7 +1,7 @@
 # **Cursed Collection**
 
 ### **Produit par : _RUIZ GOURBIN Newen_, _CARREZ Quentin_, _ROUGER Jules_**
-### ** 1er Général 6 au Lycée Arago - Perpignan **
+### **1er Général 6 au Lycée Arago - Perpignan**
 
 
 
