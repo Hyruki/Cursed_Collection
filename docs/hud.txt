@@ -1,0 +1,15 @@
+hud
+
+affichage_coins(joueur) : Cette fonction parcourt les objets coins, les dessine à l'écran avec pyxel.rect et vérifie s'il y a une collision avec le joueur. Si une collision est détectée, le butin est ajouté et l'objet coin est retiré.
+
+stats_mise_à_jour() : Elle met à jour l'affichage des statistiques du joueur, comme les points de vie ou d'autres informations qui sont extraites de joueur.stats_joueur.
+
+afficher_pv_perso() : Cette fonction affiche la barre de vie du joueur en fonction de la santé actuelle, et modifie la couleur de la barre en fonction de la quantité de vie restante. Si la vie atteint zéro, le jeu passe en mode "Game Over".
+
+hud() : Affiche l'interface utilisateur (UI) avec des éléments comme le nombre de pièces collectées et les capacités actives du joueur.
+
+gérer_capacité() : Gère l'affichage et l'activation des capacités du joueur en fonction des entrées clavier et souris. Elle vérifie également si une capacité est activée ou non et la réinitialise si nécessaire.
+
+temp_capa() : Gère le cooldown des capacités, en désactivant celles qui ont expiré en fonction du temps écoulé et de l'effet des statistiques du joueur sur le cooldown.
+
+pause_menu() : Affiche le menu de pause du jeu avec des options comme "Reprendre", "Redémarrer" et "Quitter". Elle permet également de contrôler les actions lorsque l'utilisateur clique sur ces options.

@@ -1,0 +1,41 @@
+La fonction difficultée() possède 0 option. 
+Cette fonction à pour but de pouvoir affiché l'état de sélection de difficulté corrsepondant à l'état 2.
+
+La fonction afficher_intro() possède 0 option.
+Cette fonction est présente afin de pouvoir afficher le menu de difficulté.
+
+La fonction menu() possède 0 option.
+Cette fonction est ici pour pouvoir afficher et utiliser le menu du tout début du jeu représenant l'état numéro 0 du jeu
+
+La fonction son_icone() possède 0 option.
+Cette fonction est là pour affiché l'activation et la désactivation du son
+
+La fonction gerer_son() possède 0 0ption.
+Cette fonction à pour principe d'activer ou désactivé le son grâce à la touche M du clavier
+
+La fonction selection_perso() possède 0 option.
+Cette fonction à pour objectif d'afficher et de pouvoir utiliser le menu de sélection des différents personnnages mise à disposition tout en utilisant les sons des boutons.
+
+La fonction musique_menu(etat=None) possède 1 options optionnel. 
+Cette fonction grâce à cette option optionnel sert d'intermédiaire entre l'état avec le son de la musique du menu et la désactivation de ce son.
+
+La fonction musique_game(etat=None) possède 1 options optionnel. 
+Cette fonction grâce à cette option optionnel sert d'intermédiaire entre l'état avec le son de la musique du jeu de base et la désactivation de ce son.
+
+La fonction button_sound() possède 0 option.
+Cette fonction à pour but de pouvoir executer le son des boutons
+
+La fonction reset_button_sound() possède 0 option.
+Cette fonction à pour principe de réinitialiser le son des boutons.
+
+La fonction game_over() possède 0 option.
+Cette fonction est très utile car elle permet d'utiliser le système total du GAME OVER en fin de partie et de pouvoir relancer ou non.
+
+La fonction pause() possède 0 option.
+Cette fonction permet le système de pause du jeu
+
+La fonction round_sys() possède 0 option.
+Cette fonction à le pouvoir de changer le round et afficher une orbe de pouvoir à la fin de chaque round quand tous les ennemies on été tués.
+
+La fonction reset_game() possède 0 option.
+Cette fonction est présente afin de totalement réinitialiser le code dans son ensemble et dans tous les scripts permettant de rejouer au jeu comme si nous avions quitté et relancer le jeu.

@@ -1,0 +1,9 @@
+Update et Draw font tourner toutes les fonctions
+
+Les game state servent à gérer quels fonction sont en train de fonctioner par rapport au stade du jeu
+
+LE GAME STATE EST L'ETAT DANS LAQUEL L'UTILISATEUR CE SITUE
+Le 0 désigne le menu de base
+Le 1 désigne la selection du personnage
+Le 2 désigne le choix de difficultée
+Le 3 désigne le lancement du jeu

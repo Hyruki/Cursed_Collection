@@ -1,0 +1,20 @@
+
+
+def coins(x, y): permet de créé un Système de sauvegarde des coins dans la liste coins_present 
+
+
+
+def coeur(x, y):permet de crée un Système de sauvegarde du coeur dans la liste coeurs_present
+
+
+
+def coins_show(x, y, h, l): permet de crée un Système d'affichage des coins dans la liste coins_present
+
+
+
+def anim_all():permet de crée Système d'animation des loots
+
+def orbes(couleur):permet de donner une couleur a l'orbe
+
+
+def show_all(x, y, h, l, pause):permet de gérer l'affichage de différents éléments visuels du jeu

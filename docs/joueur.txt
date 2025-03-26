@@ -1,0 +1,23 @@
+double_hit() gere la stat qui permet de doublet les dégats
+
+move_player() Système de déplacement du joueur par rapport au touche appuyé
+
+DEBUG_MODE() système de debogage obsolette
+
+jump_sys() gère le saut
+
+generation_type() applique des modifications par rapport au personnage choisit
+
+tirs_creation(x, y) affichage des tirs
+
+tirs_deplacement() gère le déplacement des projectile et leurs effets sur les ennemis
+
+tirs_type(couleur) change le modèle des projectiles par rapport au personnage choisit
+
+degats() système de collision avec les ennemis
+
+rotation() changement de direction des personnages
+
+capacitée() fonctionnement des capacitées des personnages par rapport au TYPE correspondant
+
+orbes_afficher() affiche les orbes avec des couleurs aléatoire et des spawn différents selon le round

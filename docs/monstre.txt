@@ -1,0 +1,21 @@
+mariline_monro() fait apparaitre le boss mariline monro
+
+affichages_enemies() affiche les ennemis classique
+
+ennemis_cells() déplacement des ennemis 
+
+les defs nom de tableau renseignent les données d'apparition et d'affichage des monstres de base
+
+alea() permet d'avoir des models d'ennemis de base différents
+
+place_alea_coord() permet aux ennemis de base de spawn à des endroits différents
+
+nombre_ennemi_par_round() limmite le nombre d'ennemis de base , gere le système d'ajout d'ennemi , limite le spawn de boss 
+
+place_enemis(n_enemies:int) fait apparaitre les ennemis de base à chaque vague
+
+boss() affiche le boss
+
+atk_boss() affiche et fait fonctionner les attaques des boss
+
+drop_loot(x, y) fait apparaitre le loot des ennemis de base de façon aléatoire

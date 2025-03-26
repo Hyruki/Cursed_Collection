@@ -1,0 +1,22 @@
+Voici une description complète du script utils.py : 
+
+La fonction collision(xobjet, yobjet, hobjet, lobjet, xperso,yperso,hperso,lperso) possède 8 options obligatoires : 
+
+- la coordonnée x de l'objet que nous voulons détecter la collision, 
+- la coordonnée y de cette objet également, sa hauteur, sa largeur, 
+- la coordonnée x du personnage, 
+- la coordonnée y également, 
+- sa hauteur 
+- sa longeur. 
+
+Cette fonction permet alors de pouvoir détecter les collisions entre 2 objets avec les coordonées ainsi que la longueur pour pouvoir vérifier les collisions du bas et de la droite.
+
+
+
+la fonction verif_col_liste(x, y, l) possède 3 options obligatoires : 
+
+- la coordonnée x du joueur
+- la coordonnée y du joueur
+- une liste crée en python contenant un tuple avec les coordonnées x et y d'une tuiles présentes dans le vie256.pyxres
+
+Cette fonction a pour but de pouvoir vérifier la collision entre le joueur et toutes les tuiles correspondants aux coordonées des tuiles de la liste qui sont dessiné dans le tilemap pyxress.

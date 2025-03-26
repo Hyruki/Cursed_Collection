@@ -1,0 +1,4 @@
+Attaque classique : E / Left_click
+Attaque secondaire: 1 / Right_click
+Capacité d'esquive: 2 / Mouse_Button_Middle
+Capacité ultime   : X
